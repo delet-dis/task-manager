@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run eslint",
     "eslint": "eslint src/**/*.js",
-    "test": "npm run eslint"
+    "eslint-fix": "eslint -- --fix  "
   },
   "devDependencies": {
     "eslint": "6.1.0",
-    "eslint-config-htmlacademy": "0.5.2"
+    "eslint-config-google": "^0.14.0"
   },
   "engines": {
     "node": "10"
