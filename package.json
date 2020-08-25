@@ -1,8 +1,8 @@
 {
-  "name": "taskmanager",
+  "name": "task-manager",
   "version": "1.0.0",
-  "private": true,
-  "description": "Учебный проект «Менеджер задач» от HTML Academy",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "eslint": "eslint src/**/*.js",
     "test": "npm run eslint"
@@ -13,5 +13,16 @@
   },
   "engines": {
     "node": "10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delet-dis/task-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delet-dis/task-manager/issues"
+  },
+  "homepage": "https://github.com/delet-dis/task-manager#readme"
 }
