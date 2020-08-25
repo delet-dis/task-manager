@@ -1,8 +1,14 @@
-* text eol=lf
-
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.webp binary
-*.woff binary
-*.woff2 binary
+.DS_Store
+.idea
+.vscode
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+node_modules/
+dist/
+npm-debug.*
+Thumbs.db
+src/modules/
+.cache
