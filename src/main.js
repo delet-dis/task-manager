@@ -1,9 +1,13 @@
 'use strict';
+// объявление элементов страницы
+const pageMainElement = document.querySelector('.main');
+const pageHeaderElement = document.querySelector('.main__control');
 
+// функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);
 }
-
+// функции создания компонентов
 const createMenuComponent = () => {
   return (`<section class="control__btn-wrap">
   <input
@@ -347,3 +351,21 @@ const createEditAndCreateTaskCardComponent = () => {
 };
 
 const createLoadMoreButtonComponent = () => `<button class="load-more" type="button">load more</button>`;
+
+// отрисовка компонентов
+render(pageHeaderElement, createMenuComponent());
+render(pageMainElement, createFiltersComponent());
+render(pageMainElement, createTaskListComponent());
+
+const boardElement = document.querySelector('.board');
+const tasklistElement = document.querySelector('.board__tasks');
+
+const NUMBER_OF_CARDS = 3;
+
+render(tasklistElement, createEditAndCreateTaskCardComponent());
+
+for (let i = 0; i < NUMBER_OF_CARDS; i++) {
+  render(tasklistElement, createTaskCardComponent());
+}
+
+render(boardElement, createLoadMoreButtonComponent());
