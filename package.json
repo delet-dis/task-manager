@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run eslint",
-    "eslint": "eslint src/**/*.js",
-    "eslint-fix": "eslint -- --fix  "
+    "eslint": "eslint src/**/*.js"
   },
   "devDependencies": {
     "eslint": "6.1.0",
-    "eslint-config-google": "^0.14.0",
     "stylelint": "^13.6.1"
   },
   "engines": {
