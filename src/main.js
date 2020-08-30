@@ -1,12 +1,9 @@
 'use strict';
-// объявление элементов страницы
-const pageMainElement = document.querySelector('.main');
-const pageHeaderElement = document.querySelector('.main__control');
 
 // функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);
-}
+};
 // функции создания компонентов
 const createMenuComponent = () => {
   return (`<section class="control__btn-wrap">
@@ -351,6 +348,10 @@ const createEditAndCreateTaskCardComponent = () => {
 };
 
 const createLoadMoreButtonComponent = () => `<button class="load-more" type="button">load more</button>`;
+
+// объявление элементов страницы
+const pageMainElement = document.querySelector('.main');
+const pageHeaderElement = document.querySelector('.main__control');
 
 // отрисовка компонентов
 render(pageHeaderElement, createMenuComponent());

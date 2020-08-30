@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "eslint": "6.1.0",
-    "stylelint": "^13.6.1"
+    "stylelint": "13.6.1"
   },
   "engines": {
     "node": "10"
