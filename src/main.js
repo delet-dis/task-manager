@@ -1,5 +1,3 @@
-'use strict';
-
 // функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);

@@ -7,7 +7,7 @@
     "test": "npm run eslint",
     "eslint": "eslint src/**/*.js",
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "webpack --mode='production'"
   },
   "devDependencies": {
     "eslint": "6.1.0",
