@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run eslint",
-    "eslint": "eslint src/**/*.js"
+    "eslint": "eslint src/**/*.js",
+    "start": "webpack-dev-server --open"
   },
   "devDependencies": {
     "eslint": "6.1.0",
-    "stylelint": "13.6.1"
+    "stylelint": "13.6.1",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   },
   "engines": {
     "node": "10"
