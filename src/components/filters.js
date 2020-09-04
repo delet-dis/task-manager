@@ -15,16 +15,35 @@ const createFilterMarkup = (name, amount) => {
 
 
 const createFiltersComponent = () => {
-  const filterMarkup = createFilterMarkup(`all`, 42);
+  const filtersMarkup = [{
+      name: `all`,
+      amount: 42
+    },
+    {
+      name: `overdue`,
+      amount: 18
+    },
+    {
+      name: `today`,
+      amount: 18
+    },
+    {
+      name: `favorites`,
+      amount: 18
+    },
+    {
+      name: `repeating`,
+      amount: 18
+    },
+    {
+      name: `archive`,
+      amount: 18
+    }
+  ].map((it) => createFilterMarkup(it.name, it.amount)).join(`\n`);
 
   return `
   <section class="main__filter filter container">
-    ${filterMarkup}
-    ${filterMarkup}
-    ${filterMarkup}
-    ${filterMarkup}
-    ${filterMarkup}
-    ${filterMarkup}
+    ${filtersMarkup}
   </section>`;
 
 };
