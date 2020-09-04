@@ -1,11 +1,14 @@
-const createFilterMarkup = (name, amount) => {
+const createFilterMarkup = (filter, isChecked) => {
+
+  const {name, amount} = filter;
+
   return `
   <input
       type="radio"
       id="filter__${name}"
       class="filter__input visually-hidden"
       name="filter"
-      checked
+      ${isChecked ? `checked` : ``}
   />
 
   <label for="filter__${name}" class="filter__label">
