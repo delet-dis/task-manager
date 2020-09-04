@@ -17,7 +17,9 @@ import {
 import {
   createTaskListComponent
 } from './components/taskList.js';
-
+import{
+  generateFilters
+} from './mock/filter.js'
 // функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);
@@ -29,7 +31,7 @@ const pageHeaderElement = document.querySelector('.main__control');
 
 // отрисовка компонентов
 render(pageHeaderElement, createMenuComponent());
-render(pageMainElement, createFiltersComponent());
+render(pageMainElement, createFiltersComponent(generateFilters()));
 render(pageMainElement, createTaskListComponent());
 
 const boardElement = document.querySelector('.board');
