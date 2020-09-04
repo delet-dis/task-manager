@@ -1,6 +1,9 @@
 const createFilterMarkup = (filter, isChecked) => {
 
-  const {name, amount} = filter;
+  const {
+    name,
+    amount
+  } = filter;
 
   return `
   <input
@@ -19,7 +22,7 @@ const createFilterMarkup = (filter, isChecked) => {
 
 
 const createFiltersComponent = (filters) => {
-  const filtersMarkup = filters.map((it) => createFilterMarkup(it.name, it.amount)).join(`\n`);
+  const filtersMarkup = filters.map((it, i) => createFilterMarkup(it, i === 0)).join(`\n`);
 
   return `
   <section class="main__filter filter container">

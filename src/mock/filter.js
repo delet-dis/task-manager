@@ -1,29 +1,12 @@
+const filters = [`all`, `overdue`, `today`, `favorites`, `repeating`, `archive`];
+
 const generateFilters = () => {
-  return [{
-      name: `all`,
-      amount: 42
-    },
-    {
-      name: `overdue`,
-      amount: 18
-    },
-    {
-      name: `today`,
-      amount: 18
-    },
-    {
-      name: `favorites`,
-      amount: 18
-    },
-    {
-      name: `repeating`,
-      amount: 18
-    },
-    {
-      name: `archive`,
-      amount: 18
+  return filters.map((it) => {
+    return {
+      name: it,
+      amount: Math.floor(Math.random() * 10)
     }
-  ]
+  })
 };
 
 
