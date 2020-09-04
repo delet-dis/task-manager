@@ -2,13 +2,13 @@ const createFilterMarkup = (name, amount) => {
   return (
     `<input
       type="radio"
-      id="filter__all"
+      id="filter__${name}"
       class="filter__input visually-hidden"
       name="filter"
       checked
     />
-    <label for="filter__all" class="filter__label">
-      ${name} <span class="filter__all-count">${amount}</span></label
+    <label for="filter__${name}" class="filter__label">
+      ${name} <span class="filter__${name}-count">${amount}</span></label
     >`
   );
 };
