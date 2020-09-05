@@ -2,19 +2,34 @@ const createTaskCardComponent = (task) => {
 
   const {} = task;
 
-  return (`<article class="card card--black">
+  const description = `Example task with default color.`;
+  const dueDate = `26 September`;
+  const dueTime = `16:15`;
+  const color = `black`;
+  const isArchive = false;
+  const isFavorite = true;
+  const isRepeat = false;
+  const isDeadlined = false;
+
+  const repeatClass = isRepeat ? `card--repeat` : ``;
+  const deadlineClass = isDeadlined ? `card--deadline` : ``;
+
+  const archiveButtonInactiveClass = isArchive ? `card__btn--disabled` : ``;
+  const favoriteButtonInactiveClass = isFavorite ? `card__btn--disabled` : ``;
+
+  return (`<article class="card card--${color} ${repeatClass} ${deadlineClass}">
   <div class="card__form">
     <div class="card__inner">
       <div class="card__control">
         <button type="button" class="card__btn card__btn--edit">
           edit
         </button>
-        <button type="button" class="card__btn card__btn--archive">
+        <button type="button" class="card__btn card__btn--archive ${archiveButtonInactiveClass}">
           archive
         </button>
         <button
           type="button"
-          class="card__btn card__btn--favorites card__btn--disabled"
+          class="card__btn card__btn--favorites ${favoriteButtonInactiveClass}"
         >
           favorites
         </button>
@@ -25,15 +40,15 @@ const createTaskCardComponent = (task) => {
         </svg>
       </div>
       <div class="card__textarea-wrap">
-        <p class="card__text">Example task with default color.</p>
+        <p class="card__text">${description}</p>
       </div>
       <div class="card__settings">
         <div class="card__details">
           <div class="card__dates">
             <div class="card__date-deadline">
               <p class="card__input-deadline-wrap">
-                <span class="card__date">23 September</span>
-                <span class="card__time">16:15</span>
+                <span class="card__date">${dueDate}</span>
+                <span class="card__time">${dueTime}</span>
               </p>
             </div>
           </div>
