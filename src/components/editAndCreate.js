@@ -2,7 +2,17 @@ const createEditAndCreateTaskCardComponent = (task) => {
 
   const {} = task;
 
-  return (`<article class="card card--edit card--yellow card--repeat">
+  const description = `Example task with default color.`;
+  const dueDate = `26 September`;
+  const dueTime = `16:15`;
+  const color = `black`;
+  const isRepeat = false;
+  const isDeadlined = false;
+
+  const repeatClass = isRepeat ? `card--repeat` : ``;
+  const deadlineClass = isDeadlined ? `card--deadline` : ``;
+
+  return (`<article class="card card--edit card--${color} ${repeatClass} ${deadlineClass}">
   <form class="card__form" method="get">
     <div class="card__inner">
       <div class="card__color-bar">
@@ -16,7 +26,7 @@ const createEditAndCreateTaskCardComponent = (task) => {
               class="card__text"
               placeholder="Start typing your text here..."
               name="text"
-            >Here is a card with filled data</textarea>
+            >${description}</textarea>
           </label>
       </div>
       <div class="card__settings">
@@ -32,7 +42,7 @@ const createEditAndCreateTaskCardComponent = (task) => {
                     type="text"
                     placeholder=""
                     name="date"
-                    value="23 September 16:15"
+                    value="${dueDate} ${dueTime}"
                   />
                 </label>
               </fieldset>
