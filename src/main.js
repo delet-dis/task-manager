@@ -19,7 +19,10 @@ import {
 } from './components/taskList.js';
 import{
   generateFilters
-} from './mock/filter.js'
+} from './mock/filter.js';
+import{
+  generateTasks
+} from './mock/task.js'
 // функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);
@@ -29,20 +32,24 @@ const render = (path, markup, position = `beforeend`) => {
 const pageMainElement = document.querySelector('.main');
 const pageHeaderElement = document.querySelector('.main__control');
 
+const NUMBER_OF_TASKS = 3;
+
+const filters = generateFilters();
+const tasks = generateTasks(NUMBER_OF_TASKS);
+
 // отрисовка компонентов
 render(pageHeaderElement, createMenuComponent());
-render(pageMainElement, createFiltersComponent(generateFilters()));
+render(pageMainElement, createFiltersComponent(filters));
 render(pageMainElement, createTaskListComponent());
 
 const boardElement = document.querySelector('.board');
 const tasklistElement = document.querySelector('.board__tasks');
 
-const NUMBER_OF_CARDS = 3;
 
-render(tasklistElement, createEditAndCreateTaskCardComponent());
+render(tasklistElement, createEditAndCreateTaskCardComponent(tasks[0]));
 
-for (let i = 0; i < NUMBER_OF_CARDS; i++) {
-  render(tasklistElement, createTaskCardComponent());
+for (let i = 0; i < tasks.length; i++) {
+  render(tasklistElement, createTaskCardComponent(tasks[i]));
 }
 
 render(boardElement, createLoadMoreButtonComponent());
