@@ -6,9 +6,5 @@ node_js:
 notifications:
   email: true
 
-git:
-  depth: 1
-  quiet: true
-
 script: npm run build
 npm run eslint
