@@ -6,6 +6,7 @@ const createColorsComponent = () => {
                 class="card__color-input card__color-input--black visually-hidden"
                 name="color"
                 value="black"
+                checked
               />
               <label
                 for="color-black-4"
@@ -18,7 +19,6 @@ const createColorsComponent = () => {
                 class="card__color-input card__color-input--yellow visually-hidden"
                 name="color"
                 value="yellow"
-                checked
               />
               <label
                 for="color-yellow-4"
