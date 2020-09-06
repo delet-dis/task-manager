@@ -142,12 +142,9 @@ const createRepeatingDaysComponent = () => {
 
 const createEditAndCreateTaskCardComponent = (task) => {
 
-  const {} = task;
+  const {description, dueDate, repeatingDays, color} = task;
 
-  const description = `Example task with default color.`;
-  const dueDate = `26 September`;
   const dueTime = `16:15`;
-  const color = `black`;
   const isRepeat = false;
   const isDeadlined = false;
 

@@ -1,13 +1,8 @@
 const createTaskCardComponent = (task) => {
 
-  const {} = task;
+  const {description, dueDate, color, repeatingDays, tags, isFavorite, isArchive} = task;
 
-  const description = `Example task with default color.`;
-  const dueDate = `26 September`;
   const dueTime = `16:15`;
-  const color = `black`;
-  const isArchive = false;
-  const isFavorite = true;
   const isRepeat = false;
   const isDeadlined = false;
 
