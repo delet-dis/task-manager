@@ -1,6 +1,6 @@
 // импорты
-import '../src/css/normalize.css';
-import '../src/css/style.css';
+import './css/normalize.css';
+import './css/style.css';
 import {
   createEditAndCreateTaskCardComponent
 } from './components/editAndCreate.js';
