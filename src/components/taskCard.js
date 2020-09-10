@@ -1,13 +1,32 @@
+import {
+  MONTH_NAMES
+} from '../const.js';
+import {
+  formatTime
+} from '../utils.js';
+
 const createTaskCardComponent = (task) => {
 
-  const {description, dueDate, color, repeatingDays, tags, isFavorite, isArchive} = task;
+  const {
+    description,
+    dueDate,
+    color,
+    repeatingDays,
+    tags,
+    isFavorite,
+    isArchive
+  } = task;
 
-  const dueTime = `16:15`;
+  const isExpired = dueDate instanceof Date && dueDate < Date.now();
+  const isDateShowing = !!dueDate;
+
+  const date = isDateShowing ? `${dueDate.getDate()} ${MONTH_NAMES[dueDate.getMonth()]}` : ``;
+  const time = isDateShowing ? formatTime(dueDate) : ``;
+
   const isRepeat = false;
-  const isDeadlined = false;
 
   const repeatClass = isRepeat ? `card--repeat` : ``;
-  const deadlineClass = isDeadlined ? `card--deadline` : ``;
+  const deadlineClass = isExpired ? `card--deadline` : ``;
 
   const archiveButtonInactiveClass = isArchive ? `card__btn--disabled` : ``;
   const favoriteButtonInactiveClass = isFavorite ? `card__btn--disabled` : ``;
@@ -42,8 +61,8 @@ const createTaskCardComponent = (task) => {
           <div class="card__dates">
             <div class="card__date-deadline">
               <p class="card__input-deadline-wrap">
-                <span class="card__date">${dueDate}</span>
-                <span class="card__time">${dueTime}</span>
+                <span class="card__date">${date}</span>
+                <span class="card__time">${time}</span>
               </p>
             </div>
           </div>
