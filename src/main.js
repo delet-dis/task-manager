@@ -19,10 +19,10 @@ import {
 import {
   createTaskListComponent
 } from './components/taskList.js';
-import{
+import {
   generateFilters
 } from './mock/filter.js';
-import{
+import {
   generateTasks
 } from './mock/task.js'
 // функция отрисовки компонентов
