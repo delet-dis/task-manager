@@ -54,9 +54,8 @@ const tasklistElement = document.querySelector('.board__tasks');
 
 render(tasklistElement, createEditAndCreateTaskCardComponent(tasks[0]));
 
-for (let i = 0; i < showingTasksCount; i++) {
-  render(tasklistElement, createTaskCardComponent(tasks[i]));
-}
+tasks.slice(1, showingTasksCount)
+  .forEach((task) => render(tasklistElement, createTaskCardComponent(task), `beforeend`));
 
 render(boardElement, createLoadMoreButtonComponent());
 
