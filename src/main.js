@@ -25,6 +25,7 @@ import {
 import {
   generateTasks
 } from './mock/task.js'
+
 // функция отрисовки компонентов
 const render = (path, markup, position = `beforeend`) => {
   path.insertAdjacentHTML(position, markup);
@@ -37,6 +38,7 @@ const pageHeaderElement = document.querySelector('.main__control');
 const NUMBER_OF_TASKS = 22;
 const SHOWING_TASK_ON_START = 8;
 const SHOWING_TASK_ON_BUTTON = 8;
+let showingTasksCount = SHOWING_TASK_ON_START;
 
 const filters = generateFilters();
 const tasks = generateTasks(NUMBER_OF_TASKS);
@@ -52,8 +54,18 @@ const tasklistElement = document.querySelector('.board__tasks');
 
 render(tasklistElement, createEditAndCreateTaskCardComponent(tasks[0]));
 
-for (let i = 0; i < tasks.length; i++) {
+for (let i = 0; i < showingTasksCount; i++) {
   render(tasklistElement, createTaskCardComponent(tasks[i]));
 }
 
 render(boardElement, createLoadMoreButtonComponent());
+
+const loadMoreButton = boardElement.querySelector(`.load-more`);
+
+loadMoreButton.addEventListener('click', () => {
+  const prevTasksCount = SHOWING_TASK_ON_START;
+  showingTasksCount = showingTasksCount + SHOWING_TASK_ON_BUTTON;
+
+  tasks.slice(prevTasksCount, showingTasksCount)
+    .forEach((task) => render(tasklistElement, createTaskCardComponent(task), `beforeend`));
+});

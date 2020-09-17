@@ -1,4 +1,6 @@
-import { COLORS } from "../const";
+import {
+  COLORS
+} from "../const";
 
 const DefaultRepeatingDays = {
   "mo": false,
@@ -40,7 +42,7 @@ const generateTask = () => {
   return {
     description: getRandomArrayItem(DescriptionItems),
     dueDate: dueDate,
-    repeatingDays: dueDate ? DefaultRepeatingDays: generateRepeatingDays(),
+    repeatingDays: dueDate ? DefaultRepeatingDays : generateRepeatingDays(),
     color: getRandomArrayItem(COLORS),
     isArchive: Math.random() > 0.5,
     isFavorite: Math.random() > 0.5,
