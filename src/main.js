@@ -34,7 +34,9 @@ const render = (path, markup, position = `beforeend`) => {
 const pageMainElement = document.querySelector('.main');
 const pageHeaderElement = document.querySelector('.main__control');
 
-const NUMBER_OF_TASKS = 3;
+const NUMBER_OF_TASKS = 22;
+const SHOWING_TASK_ON_START = 8;
+const SHOWING_TASK_ON_BUTTON = 8;
 
 const filters = generateFilters();
 const tasks = generateTasks(NUMBER_OF_TASKS);
